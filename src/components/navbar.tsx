@@ -24,7 +24,7 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 w-full py-4 px-4 md:px-6 z-50 bg-transparent backdrop-blur-md border-b border-white/20"
     >
-      <div className="w-full container mx-auto md:mt-4">
+      <div className="w-full container mx-auto ">
         <div className="w-full flex items-center justify-between">
           {/* Social Icons */}
           <motion.div 
