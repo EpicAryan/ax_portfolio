@@ -22,7 +22,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full py-4 px-4 md:px-6 z-50 bg-white/80 backdrop-blur-md border-b border-white/20"
+      className="fixed top-0 left-0 w-full py-4 px-4 md:px-6 z-50 bg-transparent backdrop-blur-md border-b border-white/20"
     >
       <div className="w-full container mx-auto md:mt-4">
         <div className="w-full flex items-center justify-between">
@@ -31,7 +31,7 @@ const Navbar = () => {
             className="flex items-center space-x-3"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.3 }}
           >
             <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
               {socialIcons.map((social, index) => {
@@ -88,7 +88,7 @@ const Navbar = () => {
             className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 absolute left-1/2 transform -translate-x-1/2 hidden sm:block"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.1}}
           >
             Based in India
           </motion.h2>
