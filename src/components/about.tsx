@@ -1,7 +1,6 @@
 'use client'
 
-import { easeOut, motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { easeOut, motion, useInView } from "motion/react"
 import Image from "next/image"
 import { useRef } from "react"
 import GlareHover from "./ui/glare-hover"

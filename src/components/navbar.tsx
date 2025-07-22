@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from "./ui/button"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence } from "motion/react"
 import { useState } from "react"
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
@@ -22,7 +22,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full py-4 px-4 md:px-6 z-50 bg-transparent backdrop-blur-md border-b border-white/20"
+      className="fixed top-0 left-0 w-full py-4 px-4 md:px-6 z-50 bg-[#FCFCFC]"
     >
       <div className="w-full container mx-auto ">
         <div className="w-full flex items-center justify-between">

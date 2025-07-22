@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import Image from "next/image"
 import { Badge } from "./ui/badge"
 import { SlidingLogoMarquee, SlidingLogoMarqueeItem  } from "@/components/ui/sliding-logo-marquee"
