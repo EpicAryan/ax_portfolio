@@ -52,7 +52,7 @@ const HeroSection = () => {
           <Image
             width={800}
             height={800}
-            src="/person.png"
+            src="https://images.ctfassets.net/m3x6aw9x53qp/6f22PkE5C7VQ8ruGY1Ek8C/3e7d5d2454dfc20cd1443bf3ea1c7f3f/person.png"
             alt="Hero Line"
             className="absolute w-[500px] xl:w-[700px] left-1/2 -bottom-0 xl:top-1/2  -translate-x-1/2 xl:-translate-y-1/2 z-10"
           />
