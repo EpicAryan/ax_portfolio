@@ -168,7 +168,7 @@ const Footer = () => {
                     variants={itemVariants}
                     className="mb-8 pointer-events-none"
                 >
-                <h2 className="text-3xl md:text-6xl lg:text-9xl font-semibold text-white uppercase">
+                <h2 className="text-3xl md:text-6xl lg:text-8xl xl:text-9xl font-semibold text-white uppercase">
                     LET&apos;S WORK
                     <br />
                     <span className="text-primary-text">TOGETHER</span>
