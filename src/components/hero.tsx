@@ -108,13 +108,13 @@ const HeroSection = () => {
 
         {/* logo section */}
         <div className="border-t-1 border-t-[#DEDEDE] mt-6 mx-auto flex justify-center">
-          <div className="max-w-3xl flex flex-col md:flex-row md:space-x-6">
+          <div className="max-w-xl xl:max-w-3xl flex flex-col md:flex-row md:space-x-6">
               <motion.h4
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5}} 
-                className="text-[#545454] text-center md:text-left md:text-lg font-medium text-nowrap mt-4 lg:mt-8">
+                className="text-[#545454] text-center md:text-left md:text-lg font-medium text-nowrap mt-4 md:mt-8">
                 Trusted by <span className="text-black font-bold">many</span>
               </motion.h4>
               <SlidingLogoMarquee 

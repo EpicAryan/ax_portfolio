@@ -125,7 +125,7 @@ const Footer = () => {
         />
       </div>
 
-      {/* Content Overlay - Allow pointer events to pass through */}
+      {/* Content Overlay */}
       <div className="relative z-10 flex flex-col pointer-events-none">
         <motion.div
           variants={containerVariants}

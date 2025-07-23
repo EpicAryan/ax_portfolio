@@ -131,14 +131,26 @@ export function SlidingLogoMarquee({
           /* Tablet breakpoint based on viewport */
           @media (min-width: 600px) { /* Adjust this breakpoint as per your design system */
             .sliding-marquee-resizable {
-              min-width: 550px;
+              min-width: 500px;
             }
           }
 
           /* PC breakpoint based on viewport */
           @media (min-width: 1024px) { /* Adjust this breakpoint as per your design system */
             .sliding-marquee-resizable {
+              min-width: 600px;
+            }
+          }
+
+          @media (min-width: 1280px) { /* Adjust this breakpoint as per your design system */
+            .sliding-marquee-resizable {
               min-width: 800px;
+            }
+          }
+          
+           @media (min-width: 1536px) { /* Adjust this breakpoint as per your design system */
+            .sliding-marquee-resizable {
+              min-width: 900px;
             }
           }
 

@@ -1,6 +1,7 @@
 'use client'
 import AboutSection from '@/components/about'
 import HeroSection from '@/components/hero'
+import ServiceSection from '@/components/services'
 import React from 'react'
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
     <main>
       <HeroSection/>
       <AboutSection/>
+      <ServiceSection/>
     </main>
   )
 }
