@@ -6,7 +6,7 @@ import { Button } from "./ui/button"
 import Squares from "@/components/ui/squares"
 import { GoArrowUpRight } from "react-icons/go";
 import {  ArrowUpRight } from "lucide-react"
-import ScrollReveal from "./ui/scroll-reveal"
+import {ScrollReveal} from "./ui/scroll-reveal"
 
 const Footer = () => {
   const ref = useRef(null)
@@ -187,7 +187,7 @@ const Footer = () => {
                     <ScrollReveal
                     size="sm"
                     align="center"
-                    baseRotation={0}
+                    // baseRotation={0}
                     staggerDelay={0.02}
                     duration={0.5}
                         textClassName="text-white text-sm lg:text-2xl font-medium"

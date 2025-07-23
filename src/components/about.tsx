@@ -202,7 +202,7 @@ import { easeOut, motion, useInView } from 'motion/react';
 import Image from "next/image";
 import { useRef } from "react";
 import GlareHover from "./ui/glare-hover";
-import ScrollReveal from "./ui/scroll-reveal";
+import {ScrollReveal} from "./ui/scroll-reveal";
 
 const AboutSection = () => {
   const sectionRef = useRef(null);
@@ -300,7 +300,7 @@ const AboutSection = () => {
             <ScrollReveal
               size="sm"
               align="left"
-              baseRotation={0}
+              // baseRotation={0}
               staggerDelay={0.02}
               duration={0.5}
               textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
