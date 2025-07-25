@@ -42,13 +42,13 @@ const ServiceSection = () => {
         <div className="flex flex-col space-y-1 lg:space-y-2 text-left">
           <motion.h4
             variants={slideFromLeft}
-            className="text-primary-text md:text-xl lg:text-2xl font-bold lg:font-semibold uppercase"
+            className="text-primary-text md:text-xl lg:text-3xl font-bold lg:font-semibold uppercase"
           >
             Ser<span className="font-medium italic">vices</span>
           </motion.h4>
           <motion.h1
             variants={slideFromLeft}
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight"
+            className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-tight"
           >
             Explore what I can do for you
           </motion.h1>

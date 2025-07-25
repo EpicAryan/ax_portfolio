@@ -217,8 +217,8 @@ export const ServiceAccordion = ({ services, defaultOpenId = "service-00" }: Ser
                     <span className={`text-xs md:text-xl font-normal transition-colors self-baseline ${isHovered ? 'text-primary-text' : 'text-primary-text'}`}>
                       {service.id.split('-')[1]}
                     </span>
-                    <div className="flex items-baseline gap-1 md:gap-4 text-left">
-                      <h3 className={`text-lg md:text-3xl lg:text-4xl font-bold uppercase tracking-wider transition-colors ${isHovered ? 'text-white' : 'text-[#555555]'}`}>
+                    <div className="flex flex-wrap items-baseline gap-1 md:gap-4 text-left">
+                      <h3 className={`text-lg md:text-3xl lg:text-5xl font-bold uppercase tracking-wider transition-colors ${isHovered ? 'text-white' : 'text-[#555555]'}`}>
                         {service.title}
                       </h3>
                       <span className={`text-xs md:text-base font-normal transition-colors ${isHovered ? 'text-white/70' : 'text-[#868686'}`}>
@@ -227,7 +227,7 @@ export const ServiceAccordion = ({ services, defaultOpenId = "service-00" }: Ser
                     </div>
                   </div>
                   
-                  <div className="relative z-10 flex size-4 lg:size-6 items-center justify-center rounded-full border-2 border-gray-300 p-3 lg:p-4 transition-colors duration-300">
+                  <div className="relative z-10 flex items-center justify-center rounded-full border-2 border-gray-300 p-2 sm:p-3 lg:p-4 transition-colors duration-300">
                     <AnimatePresence initial={false} mode="wait">
                       {isOpen ? (
                         <motion.div
