@@ -48,7 +48,7 @@ const ServiceSection = () => {
           </motion.h4>
           <motion.h1
             variants={slideFromLeft}
-            className="text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold tracking-tight"
+            className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tight uppercase"
           >
             Explore what I can do for you
           </motion.h1>
