@@ -123,12 +123,25 @@
 
 import { motion } from 'motion/react';
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import GlareHover from "./ui/glare-hover";
 import {ScrollReveal} from "./ui/scroll-reveal";
 
 const AboutSection = () => {
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -189,30 +202,56 @@ const AboutSection = () => {
             </motion.h2>
           </div>
           
-          <motion.div
-            variants={itemVariants.logo}
-            className="mt-4 md:mt-6 lg:mt-0 xl:-translate-y-8"
-          >
-            <GlareHover
-              glareColor="#ffffff"
-              glareOpacity={0.6}
-              glareAngle={-30}
-              glareSize={200}
-              transitionDuration={1500}
-              autoPlay={true}
-              autoPlayInterval={3000}
-              removeBackground={true}
-              borderRadius="0px"
+          {/* Conditional motion.div - only animate on desktop */}
+          {!isMobile ? (
+            <motion.div
+              variants={itemVariants.logo}
+              className="mt-4 md:mt-6 lg:mt-0 xl:-translate-y-8"
             >
-              <Image
-                width={500}
-                height={500}
-                src='/svg/about-logo.svg'
-                alt="about-logo"
-                className="size-16 md:size-20 xl:size-28"
-              />
-            </GlareHover>
-          </motion.div>
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.6}
+                glareAngle={-30}
+                glareSize={200}
+                transitionDuration={1500}
+                autoPlay={true}
+                autoPlayInterval={3000}
+                removeBackground={true}
+                borderRadius="0px"
+              >
+                <Image
+                  width={500}
+                  height={500}
+                  src='/svg/about-logo.svg'
+                  alt="about-logo"
+                  className="size-16 md:size-20 xl:size-28"
+                />
+              </GlareHover>
+            </motion.div>
+          ) : (
+            // No motion.div animation on mobile, but keep GlareHover
+            <div className="mt-4 md:mt-6 lg:mt-0 xl:-translate-y-8">
+              <GlareHover
+                glareColor="#ffffff"
+                glareOpacity={0.6}
+                glareAngle={-30}
+                glareSize={200}
+                transitionDuration={1500}
+                autoPlay={true}
+                autoPlayInterval={3000}
+                removeBackground={true}
+                borderRadius="0px"
+              >
+                <Image
+                  width={500}
+                  height={500}
+                  src='/svg/about-logo.svg'
+                  alt="about-logo"
+                  className="size-16 md:size-20 xl:size-28"
+                />
+              </GlareHover>
+            </div>
+          )}
         </div>
         
         <div className="text-right flex flex-col items-center lg:items-end mt-6 xl:mt-0">
@@ -225,20 +264,35 @@ const AboutSection = () => {
               <br className="lg:hidden"/>Trader, Entrepreneur, Builder from Delhi.
             </motion.h4>
 
-            <motion.div
-              variants={itemVariants.fadeIn}
-            >
-              <ScrollReveal
-                size="sm"
-                align="left"
-                staggerDelay={0.02}
-                duration={0.5}
-                textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
-              >
-                With 5 years in trading, I specialize in long-term growth and risk management. I&apos;m building Axtionable, a job discovery platform, and creating custom SaaS solutions for startups. I also invest in early-stage startups and run a PVC granules manufacturing unit. My background spans fintech, logistics, research, and customer experience.
-                Always open to collaborations—let&apos;s connect!
-              </ScrollReveal>
-            </motion.div>
+            {/* Conditional motion.div - only animate on desktop */}
+            {!isMobile ? (
+              <motion.div variants={itemVariants.fadeIn}>
+                <ScrollReveal
+                  size="sm"
+                  align="left"
+                  staggerDelay={0.02}
+                  duration={0.5}
+                  textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
+                >
+                  With 5 years in trading, I specialize in long-term growth and risk management. I&apos;m building Axtionable, a job discovery platform, and creating custom SaaS solutions for startups. I also invest in early-stage startups and run a PVC granules manufacturing unit. My background spans fintech, logistics, research, and customer experience.
+                  Always open to collaborations—let&apos;s connect!
+                </ScrollReveal>
+              </motion.div>
+            ) : (
+              // No motion.div animation on mobile, but keep ScrollReveal
+              <div>
+                <ScrollReveal
+                  size="sm"
+                  align="left"
+                  staggerDelay={0.02}
+                  duration={0.5}
+                  textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
+                >
+                  With 5 years in trading, I specialize in long-term growth and risk management. I&apos;m building Axtionable, a job discovery platform, and creating custom SaaS solutions for startups. I also invest in early-stage startups and run a PVC granules manufacturing unit. My background spans fintech, logistics, research, and customer experience.
+                  Always open to collaborations—let&apos;s connect!
+                </ScrollReveal>
+              </div>
+            )}
           </div>
         </div>
       </motion.div>
@@ -247,3 +301,4 @@ const AboutSection = () => {
 }
 
 export default AboutSection;
+
