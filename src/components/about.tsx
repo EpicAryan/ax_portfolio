@@ -151,6 +151,7 @@ const AboutSection = () => {
     },
   };
 
+  // Desktop animations (complex)
   const itemVariants = {
     fromLeft: {
       hidden: { x: -50, opacity: 0 },
@@ -173,6 +174,14 @@ const AboutSection = () => {
       visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 0.6 } },
     },
   };
+
+  // Mobile animations (simple fade only)
+  const mobileVariants = {
+    fadeIn: {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { duration: 0.5 } },
+    },
+  };
   
   return (
     <section className="pt-6 pb-12 md:pt-0 lg:py-24 overflow-x-hidden">
@@ -187,7 +196,7 @@ const AboutSection = () => {
         <div className="flex flex-col lg:flex-row items-center lg:justify-between">
           <div className="max-w-md xl:max-w-3xl space-y-4 text-center lg:text-start">
             <motion.h1
-              variants={itemVariants.fromLeft}
+              variants={isMobile ? mobileVariants.fadeIn : itemVariants.fromLeft}
               className="text-2xl md:text-4xl xl:text-6xl text-primary-text font-semibold"
             >
               Building Tomorrow,{" "}
@@ -195,104 +204,63 @@ const AboutSection = () => {
             </motion.h1>
             
             <motion.h2
-              variants={itemVariants.fromLeft}
+              variants={isMobile ? mobileVariants.fadeIn : itemVariants.fromLeft}
               className="text-xl md:text-2xl/snug xl:text-5xl/tight text-[#5E5E5E] font-medium"
             >
               -Trader, Entrepreneur, Product Builder, Investor.
             </motion.h2>
           </div>
           
-          {/* Conditional motion.div - only animate on desktop */}
-          {!isMobile ? (
-            <motion.div
-              variants={itemVariants.logo}
-              className="mt-4 md:mt-6 lg:mt-0 xl:-translate-y-8"
+          {/* Logo with conditional animations */}
+          <motion.div
+            variants={isMobile ? mobileVariants.fadeIn : itemVariants.logo}
+            className="mt-4 md:mt-6 lg:mt-0 xl:-translate-y-8"
+          >
+            <GlareHover
+              glareColor="#ffffff"
+              glareOpacity={0.6}
+              glareAngle={-30}
+              glareSize={200}
+              transitionDuration={1500}
+              autoPlay={true}
+              autoPlayInterval={3000}
+              removeBackground={true}
+              borderRadius="0px"
             >
-              <GlareHover
-                glareColor="#ffffff"
-                glareOpacity={0.6}
-                glareAngle={-30}
-                glareSize={200}
-                transitionDuration={1500}
-                autoPlay={true}
-                autoPlayInterval={3000}
-                removeBackground={true}
-                borderRadius="0px"
-              >
-                <Image
-                  width={500}
-                  height={500}
-                  src='/svg/about-logo.svg'
-                  alt="about-logo"
-                  className="size-16 md:size-20 xl:size-28"
-                />
-              </GlareHover>
-            </motion.div>
-          ) : (
-            // No motion.div animation on mobile, but keep GlareHover
-            <div className="mt-4 md:mt-6 lg:mt-0 xl:-translate-y-8">
-              <GlareHover
-                glareColor="#ffffff"
-                glareOpacity={0.6}
-                glareAngle={-30}
-                glareSize={200}
-                transitionDuration={1500}
-                autoPlay={true}
-                autoPlayInterval={3000}
-                removeBackground={true}
-                borderRadius="0px"
-              >
-                <Image
-                  width={500}
-                  height={500}
-                  src='/svg/about-logo.svg'
-                  alt="about-logo"
-                  className="size-16 md:size-20 xl:size-28"
-                />
-              </GlareHover>
-            </div>
-          )}
+              <Image
+                width={500}
+                height={500}
+                src='/svg/about-logo.svg'
+                alt="about-logo"
+                className="size-16 md:size-20 xl:size-28"
+              />
+            </GlareHover>
+          </motion.div>
         </div>
         
         <div className="text-right flex flex-col items-center lg:items-end mt-6 xl:mt-0">
           <div className="max-w-xl xl:max-w-3xl space-y-2">
             <motion.h4
-              variants={itemVariants.fromRight}
+              variants={isMobile ? mobileVariants.fadeIn : itemVariants.fromRight}
               className="text-base md:text-xl text-[#FF8367] font-medium text-center lg:text-end"
             >
               <span className="text-lg md:text-2xl text-primary-text font-bold">Hey, I&apos;m Nikhil! </span>
               <br className="lg:hidden"/>Trader, Entrepreneur, Builder from Delhi.
             </motion.h4>
 
-            {/* Conditional motion.div - only animate on desktop */}
-            {!isMobile ? (
-              <motion.div variants={itemVariants.fadeIn}>
-                <ScrollReveal
-                  size="sm"
-                  align="left"
-                  staggerDelay={0.02}
-                  duration={0.5}
-                  textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
-                >
-                  With 5 years in trading, I specialize in long-term growth and risk management. I&apos;m building Axtionable, a job discovery platform, and creating custom SaaS solutions for startups. I also invest in early-stage startups and run a PVC granules manufacturing unit. My background spans fintech, logistics, research, and customer experience.
-                  Always open to collaborations—let&apos;s connect!
-                </ScrollReveal>
-              </motion.div>
-            ) : (
-              // No motion.div animation on mobile, but keep ScrollReveal
-              <div>
-                <ScrollReveal
-                  size="sm"
-                  align="left"
-                  staggerDelay={0.02}
-                  duration={0.5}
-                  textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
-                >
-                  With 5 years in trading, I specialize in long-term growth and risk management. I&apos;m building Axtionable, a job discovery platform, and creating custom SaaS solutions for startups. I also invest in early-stage startups and run a PVC granules manufacturing unit. My background spans fintech, logistics, research, and customer experience.
-                  Always open to collaborations—let&apos;s connect!
-                </ScrollReveal>
-              </div>
-            )}
+            {/* ScrollReveal with conditional animations */}
+            <motion.div variants={isMobile ? mobileVariants.fadeIn : itemVariants.fadeIn}>
+              <ScrollReveal
+                size="sm"
+                align="left"
+                staggerDelay={0.02}
+                duration={0.5}
+                textClassName="text-sm lg:text-lg xl:text-xl font-medium text-gray-600 text-justify"
+              >
+                With 5 years in trading, I specialize in long-term growth and risk management. I&apos;m building Axtionable, a job discovery platform, and creating custom SaaS solutions for startups. I also invest in early-stage startups and run a PVC granules manufacturing unit. My background spans fintech, logistics, research, and customer experience.
+                Always open to collaborations—let&apos;s connect!
+              </ScrollReveal>
+            </motion.div>
           </div>
         </div>
       </motion.div>
@@ -301,4 +269,3 @@ const AboutSection = () => {
 }
 
 export default AboutSection;
-
